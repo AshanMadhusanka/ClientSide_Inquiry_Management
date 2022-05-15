@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/InquiryAPI")
 public class InquiryAPI extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	Inquiry ConnectionObj = new Inquiry();
+	Inquiry InquiryObj = new Inquiry();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -41,7 +41,7 @@ public class InquiryAPI extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		String output = ConnectionObj.insertConnection(
+		String output = InquiryObj.insertInquiry(
 				request.getParameter("hidItemIDSave"),
 				request.getParameter("full_name"),
 				request.getParameter("phone_no"),
@@ -59,7 +59,7 @@ response.getWriter().write(output);
 		// TODO Auto-generated method stub
 		
 		Map paras = getParasMap(request); 
-		String output = ConnectionObj.updateConnection(paras.get("hidItemIDSave").toString(), 
+		String output = InquiryObj.updateInquiry(paras.get("hidItemIDSave").toString(), 
 												paras.get("full_name").toString(), 
 												paras.get("phone_no").toString(),
 												paras.get("email").toString(),  
@@ -78,7 +78,7 @@ response.getWriter().write(output);
 		
 	Map paras = getParasMap(request); 
 		
-		String output = ConnectionObj.deleteConnection(paras.get("inquiry_id").toString()); 
+		String output = InquiryObj.deleteInquiry(paras.get("inquiry_id").toString()); 
 		response.getWriter().write(output);
 	}
 	// Convert request parameters to a Map

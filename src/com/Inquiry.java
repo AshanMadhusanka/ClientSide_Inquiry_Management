@@ -30,7 +30,7 @@ private Connection connect(){
 	
 	
 	//Insert Project Details
-	public String insertConnection(String inquiry_id, String full_name, String phone_no, String email, String address, String description){
+	public String insertInquiry(String inquiry_id, String full_name, String phone_no, String email, String address, String description){
 		String output = "";
 		try{
 			Connection con = connect();
@@ -56,8 +56,8 @@ private Connection connect(){
 				 preparedStmt.execute();
 				 con.close();
 				 
-				 String newConnection = readConnection(); 
-				 output = "{\"status\":\"success\", \"data\": \"" + newConnection + "\"}";
+				 String newInquiry = readInquiry(); 
+				 output = "{\"status\":\"success\", \"data\": \"" + newInquiry + "\"}";
 				 
 				 }catch (Exception e)
 				 {
@@ -71,7 +71,7 @@ private Connection connect(){
 	
 	
 	
-	public String readConnection(){
+	public String readInquiry(){
 		String output = "";
 		try{
 			Connection con = connect();
@@ -142,7 +142,7 @@ private Connection connect(){
 	}
 	
 	
-	public String updateConnection(String inquiry_id, String full_name, String phone_no, String email,String address, String description){ 
+	public String updateInquiry(String inquiry_id, String full_name, String phone_no, String email,String address, String description){ 
 		String output = ""; 
 		try{
 			Connection con = connect();
@@ -170,8 +170,8 @@ private Connection connect(){
 			 preparedStmt.execute(); 
 			 con.close(); 
 			 
-			 String newConnection = readConnection(); 
-			 output = "{\"status\":\"success\", \"data\": \"" + newConnection + "\"}";
+			 String newInquiry = readInquiry(); 
+			 output = "{\"status\":\"success\", \"data\": \"" + newInquiry + "\"}";
 			 
 	
 			 } catch (Exception e) {
@@ -184,7 +184,7 @@ private Connection connect(){
 	
 	
 
-	public String deleteConnection(String inquiry_id) { 
+	public String deleteInquiry(String inquiry_id) { 
 		String output = ""; 
 		try{ 
 			Connection con = connect();
@@ -202,8 +202,8 @@ private Connection connect(){
 				preparedStmt.execute(); 
 				con.close(); 
 				
-				String newConnection = readConnection(); 
-				output = "{\"status\":\"success\", \"data\": \"" + newConnection + "\"}"; 
+				String newInquiry = readInquiry(); 
+				output = "{\"status\":\"success\", \"data\": \"" + newInquiry + "\"}"; 
 				
 		} catch (Exception e) { 
 			output = "{\"status\":\"error\", \"data\": \"Error while deleting the connection.\"}"; 

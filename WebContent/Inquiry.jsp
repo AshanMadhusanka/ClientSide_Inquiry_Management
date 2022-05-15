@@ -42,9 +42,11 @@
 	<div id="divItemGrid">
 	<%
 	Inquiry InqObj = new Inquiry(); 
-	 out.print(InqObj.readConnection()); 
+	 out.print(InqObj.readInquiry()); 
 	%>
 	</div>
+	<br>
+	<br>
 </div> </div> </div> 
 	
 </body>
