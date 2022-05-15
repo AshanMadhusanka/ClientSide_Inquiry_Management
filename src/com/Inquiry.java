@@ -81,7 +81,7 @@ private Connection connect(){
 				
 			// Prepare the html table to be displayed
 			output = 
-					"<table border='1' >"+ 
+					"<table border='10' class='table table-info table-bordered table-striped table-hover table-warning'>"+ 
 					"<tr >" +
 						 "<th >Full Name</th>" +
 						 "<th >Phone Number</th>" +
