@@ -11,36 +11,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class FundAPI
- */
 @WebServlet("/InquiryAPI")
 public class InquiryAPI extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Inquiry InquiryObj = new Inquiry();
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public InquiryAPI() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    //API Method for Get Data
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	//API Method for Insert Data
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
+		
 		String output = InquiryObj.insertInquiry(
 				request.getParameter("hidItemIDSave"),
 				request.getParameter("full_name"),
@@ -52,11 +44,11 @@ public class InquiryAPI extends HttpServlet {
 response.getWriter().write(output);
 	}
 
-	/**
-	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
-	 */
+
+	//API Method for Update the Data
+	
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		
 		Map paras = getParasMap(request); 
 		String output = InquiryObj.updateInquiry(paras.get("hidItemIDSave").toString(), 
@@ -70,11 +62,11 @@ response.getWriter().write(output);
 		response.getWriter().write(output); 
 	}
 
-	/**
-	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
-	 */
+
+	//API Method for Delete Data
+	
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		
 	Map paras = getParasMap(request); 
 		

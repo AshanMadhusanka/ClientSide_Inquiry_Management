@@ -69,7 +69,7 @@ private Connection connect(){
 	 }
 	
 	
-	
+	// Method for create Table and Get Data from the Database
 	
 	public String readInquiry(){
 		String output = "";
@@ -141,6 +141,7 @@ private Connection connect(){
 		 
 	}
 	
+	//Method for Update the database information
 	
 	public String updateInquiry(String inquiry_id, String full_name, String phone_no, String email,String address, String description){ 
 		String output = ""; 
@@ -182,7 +183,7 @@ private Connection connect(){
 			 return output; 
 	 }
 	
-	
+	//Method for delete data
 
 	public String deleteInquiry(String inquiry_id) { 
 		String output = ""; 
