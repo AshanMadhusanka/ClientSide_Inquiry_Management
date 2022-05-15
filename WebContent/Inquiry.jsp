@@ -86,10 +86,7 @@
 									class="form-control btn btn-primary rounded submit px-3"> 
 								<input type="hidden" id="hidItemIDSave" name="hidItemIDSave" value="">
 								</div>
-								<div>
-								<a href="ViewAndDelete.jsp" class="form-control btn btn-primary rounded submit px-3">
-								View Inquiry</a>
-								</div>
+
 							</form>
 						</div>
 					</div>
@@ -104,8 +101,6 @@
 			<div>
 				<h1 style= "text-align:center">Inquiry Management</h1>
 				
-
-
 				<div id="alertSuccess" class="alert alert-success"></div>
 				<div id="alertError" class="alert alert-danger"></div>
 				<br>
